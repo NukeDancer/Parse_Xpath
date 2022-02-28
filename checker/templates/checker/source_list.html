@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+{% block content %}
+{% for object in object_list %}
+  <div class="m-2" style="display: flex; justify-content: space-between;">
+    <div><a href="{{object.get_absolute_url}}">{{object}}</a></div>
+    <div><a class="btn btn-success"  href="{% url 'check_source_news' object.pk %}">Check news for Source</a>
+    <a class="btn btn-danger"  href="{% url 'checker_source_delete' object.pk %}">Delete</a></div>
+  </div>
+{% endfor %}
+<div style="display: flex; justify-content: right;"><a class="btn btn-primary" href="{% url 'checker_source_create' %}">Create a new source</a></div>
+{% endblock %}

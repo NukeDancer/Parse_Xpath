@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="m-2" style="display: flex; justify-content: center;">
+        <h4>Menu</h4>
+    </div>
+    <div class="m-2" style="display: flex; justify-content: center;">
+        <a class="btn btn-light" href="{% url 'checker_source_list' %}">Manage Source and Check News</a>
+    </div>
+    <div class="m-2" style="display: flex; justify-content: center;">
+        <a class="btn btn-light" href="{% url 'checker_news_list' %}">Manage News</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'checker_source_list' %}">
+    Manage Source
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>name</td><td>{{ object.name }}</td></tr>
+    <tr><td>base_url</td><td>{{ object.base_url }}</td></tr>
+    <tr><td>start_url</td><td>{{ object.start_url }}</td></tr>
+    <tr><td>title_xpath</td><td>{{ object.title_xpath }}</td></tr>
+    <tr><td>links_xpath</td><td>{{ object.links_xpath }}</td></tr>
+    <tr><td>source_xpath</td><td>{{ object.source_xpath }}</td></tr>
+    <tr><td>body_xpath</td><td>{{ object.body_xpath }}</td></tr>
+    <tr><td>image_xpath</td><td>{{ object.image_xpath }}</td></tr>
+    <tr><td>date_xpath</td><td>{{ object.date_xpath }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

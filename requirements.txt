@@ -1,0 +1,7 @@
+Django~=4.0.2
+djangorestframework~=3.13.1
+pillow
+pytest~=7.0.1
+requests~=2.27.1
+lxml~=4.8.0
+validators~=0.18.2

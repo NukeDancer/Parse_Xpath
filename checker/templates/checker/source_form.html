@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'checker_source_list' %}">
+    Manage Source
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="title_xpath">title_xpath: </label>
+  <input class="form-control col-sm-10" id="title_xpath" type="text" name="title_xpath" value="{{ object.title_xpath }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="source_xpath">source_xpath: </label>
+  <input class="form-control col-sm-10" id="source_xpath" type="text" name="source_xpath" value="{{ object.source_xpath }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="base_url">base_url: </label>
+  <input class="form-control col-sm-10" id="base_url" type="text" name="base_url" value="{{ object.base_url }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="links_xpath">links_xpath: </label>
+  <input class="form-control col-sm-10" id="links_xpath" type="text" name="links_xpath" value="{{ object.links_xpath }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="start_url">start_url: </label>
+  <input class="form-control col-sm-10" id="start_url" type="text" name="start_url" value="{{ object.start_url }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="body_xpath">body_xpath: </label>
+  <input class="form-control col-sm-10" id="body_xpath" type="text" name="body_xpath" value="{{ object.body_xpath }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="image_xpath">image_xpath: </label>
+  <input class="form-control col-sm-10" id="image_xpath" type="text" name="image_xpath" value="{{ object.image_xpath }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="date_xpath">date_xpath: </label>
+  <input class="form-control col-sm-10" id="date_xpath" type="text" name="date_xpath" value="{{ object.date_xpath }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<head>
+    <title>News Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="content" class="container">
+    <h2 style="display: flex; justify-content: center;"><a href="{% url 'index' %}">NukeDance News Checker</a></h2>
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">{% block content %}{% endblock %}</p>
+        </div>
+    </div>
+</div>
+<div id="content" class="container">
+    {% if message %}
+        <div class="alert alert-success alert-dismissible fade show mx-5 mt-4 border border-success" role="alert">
+            <b>{{ message }}</b>
+            <button type="button" class="close" data-dismiss="alert">
+                <h6>Close</h6>
+            </button>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
